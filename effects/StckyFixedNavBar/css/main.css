@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #e5d9d9;
+    height: 1000px;
+}
+
+.text {
+    text-align: center;
+    height: 100px;
+    background: #262626;
+}
+
+.text h1 {
+    margin: 0;
+    line-height: 100px;
+    color: #fff;
+    font-size: 48px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    background: #f00f00;
+    display: flex;
+
+
+}
+
+ul li {
+    list-style: none;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 20px;
+    display: block;
+}
+
+section {
+    height: 300px;
+}
+
+.sticky{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}

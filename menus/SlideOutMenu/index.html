@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="main.css">
+        <meta name="viewport" content="width=device-width, inintial-scale=1.0">
+        <script src="jquery-1.8.3.js"></script>  
+        <script>
+        $(document).ready(function(){
+           $('.nav-toggle').on('click',function(){
+               $('.main-navigation').toggleClass('open');
+           });            
+        });
+        
+        </script>
+    </head>
+    <body>
+        <header>
+        <h1 class="site-title">Site Name</h1>
+            <i class="fa fa-bars nav-toggle">&#9776; Menu</i>
+            <nav class="main-navigation" role="navigation">
+                <span class="nav-toggle">Close</span>
+                <ul>
+                    <li> <a href="#">Home</a></li>
+                    <li> <a href="#">About</a></li>
+                    <li> <a href="#">Clients</a></li>
+                    <li> <a href="#">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+            <main>
+                <h2>Hello</h2>
+                    <p class="parrafo2">Lorem2</p>
+                    <p class="parrafo2">Text.Text.Text.Text.Text.Text.Text.Text.Text.Text.Text.Text.Text.</p>
+                    <p class="parrafo2">Text.Text.Text.Text.Text.Text.Text.Text.Text.Text.Text.Text.Text.</p>
+                    <p class="parrafo2">Text.Text.Text.Text.Text.Text.Text.Text.Text.Text.Text.Text.Text.</p>
+                    <p class="parrafo2">Text.Text.Text.Text.Text.Text.Text.Text.Text.Text.Text.Text.Text.</p>
+
+             <footer></footer>
+
+            </main>
+    </body>
+</html>

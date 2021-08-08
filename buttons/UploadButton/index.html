@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" href="main.css">
+    <meta name="viewport" content="width=device-width, inintial-scale=1.0">
+    <script src="jquery-1.8.3.js"></script>
+</head>
+
+<body>
+  <div id="uploadbtn" onclick="upload(this)">Upload File</div>
+
+    <script>
+    function upload(ref){
+        ref.classList.add('uploading');
+        ref.onclick=null;
+        setTimeout(function(){
+            ref.classList.remove('uploading');
+            ref.classList.add('uploaded');
+            ref.innerHTML="&#10004";
+        },1400);
+    }
+        
+
+    </script>
+
+</body>
+
+</html>

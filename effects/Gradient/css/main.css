@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #464040;
+    background: #262626;
+}
+
+h1 {
+    position: absolute;
+    color: black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    background: linear-gradient(to right, yellow, green, cyan, orange, #c50cdd);
+    background-clip: tex;
+    font-size: 3rem;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}

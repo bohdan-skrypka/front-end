@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="main.css">
+        <meta name="viewport" content="width=device-width, inintial-scale=1.0">
+        <script src="jquery-1.8.3.js"></script>
+        <script>
+        $(document).ready(function(){
+           $("ul li:nth-child(1)").hover(function(){
+               $("#line").css("margin-left","3px");
+           }) ;
+            $("ul li:nth-child(2)").hover(function(){
+               $("#line").css("margin-left","113px");
+           }) ;
+            $("ul li:nth-child(3)").hover(function(){
+               $("#line").css("margin-left","223px");
+           }) ;
+            $("ul li:nth-child(4)").hover(function(){
+               $("#line").css("margin-left","333px");
+           }) ;
+           $("ul li:nth-child(5)").hover(function(){
+               $("#line").css("margin-left","443px");
+           }) ;
+        });
+        </script>
+    </head>
+    <body>
+        <ul>
+            <li>ABOUT</li>
+            <li>SERVICES</li>
+            <li><img src="picture.JPG" height="55px" width="55px" /> </li>
+            <li>WORK</li>
+            <li>CONTACT</li>
+        <div id="line"></div>
+        </ul>
+    </body>
+</html>

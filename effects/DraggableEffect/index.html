@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" href="main.css">
+    <meta name="viewport" content="width=device-width, inintial-scale=1.0">
+    <script src="jquery-1.8.3.js"></script>
+</head>
+
+<body>
+
+    <h1>Draggled DIV Element</h1>
+    <p style="text-align:center; color:#fff; font-size:20px;">Move this element</p>
+
+    <div id="my">
+        <divdfHeader></divdfHeader>
+    </div>
+    <div id="mydiv">
+        <div id="mydivHeader">Click here to move</div>
+        <p style="text-align:center;font-size:14px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima consequatur repellat sunt quis voluptatum recusandae, illo porro illum eaque, error quo ut quidem odit enim tempora reiciendis corrupti natus quas.</p>
+     
+    </div>
+    <script>
+        dragElement(document.getElementById("mydiv"));
+        dragElement(document.getElementById("my"));
+
+        function dragElement(elem) {
+            var pos1 = 0,
+                pos2 = 0,
+                pos3 = 0,
+                pos4 = 0;
+            if (document.getElementById(elem.id + "header")) {
+                document.getElementById(elem.id + "header").onmousedown = dragMouseDown;
+            } else {
+                elem.onmousedown = dragMouseDown;
+            }
+
+            function dragMouseDown(e) {
+                e = e || window.Event;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                document.onmouseup = closeDragElement;
+                document.onmousemove = elementDrag;
+            }
+
+            function elementDrag(e) {
+                e = e || window.Event;
+                pos1 = pos3 - e.clientX;
+                pos2 = pos4 - e.clientY;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                elem.style.top = (elem.offsetTop - pos2) + "px";
+                elem.style.left = (elem.offsetLeft - pos1) + "px";
+            }
+
+            function closeDragElement() {
+                document.onmousemove = null;
+                document.onmouseup = null;
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>

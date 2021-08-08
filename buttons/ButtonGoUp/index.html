@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="main.css">
+        <meta name="viewport" content="width=device-width, inintial-scale=1.0">
+        <script src="jquery-1.8.3.js"></script>   
+    </head>
+    <body>
+    <button  class="btn-top" title="Go to top">Вверх</button>
+        <h1>TITLE</h1>  
+                
+        <p>ddddddddddddddddddsdf
+        fsdfsdf
+        dsf
+        sd
+        f
+        sd
+        fd
+        sfds
+        fd
+        g
+        gds
+        fsa
+        das
+        f
+        dsf
+        ds
+        fs
+        d</p>
+        
+        <script>
+            var $btnTop=$('.btn-top');
+            $(window).on("scroll",function(){
+                if($(window).scrollTop()>=20)
+                {
+                    $btnTop.fadeIn();
+                }
+                else
+                {
+                    $btnTop.fadeOut();
+                }
+            });
+            $btnTop.on("click",function(){
+                $("html,body").animate({scrollTop:0},900)
+            })
+        </script>
+    </body>
+</html>

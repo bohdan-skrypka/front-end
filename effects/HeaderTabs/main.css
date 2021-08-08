@@ -1,0 +1,51 @@
+body {
+    font-family: arial;
+    margin: 0;
+    padding: 0;
+}
+
+.tabLink {
+    background-color: #335;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    padding: 14px 16px;
+    font-size: 18px;
+    width: 25%;
+}
+
+.tabLink:hover {
+    background-color: #777;
+}
+
+.tabContent {
+    color: white;
+    display: none;
+    padding: 50px;
+    text-align: center;
+}
+
+#firstTab {
+    background-color: red;
+}
+
+#secondTab {
+    background-color: green;
+}
+
+#thirdTab {
+    background-color: #80804d;
+}
+
+#fourthTab {
+    background-color: magenta;
+}
+
+h1{
+    text-align: center;
+    font-size: 50px;
+    margin-top: 100px;
+    color: #93ddf4;
+    text-shadow: 2px 2px 6px rgba(255,255,255,.7), 5px 7px 0px rgba(0,0,0,0.1)
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" href="main.css">
+    <meta name="viewport" content="width=device-width, inintial-scale=1.0">
+    <script src="jquery-1.8.3.js"></script>
+</head>
+
+<body>
+    <ul id="nuv">
+        <li><a href="#">Главная</a></li>
+        <li><a href="#">О нас</a></li>
+        <li class="active-line-nuv"><a href="#">Портфолио</a></li>
+        <li><a href="#">Блог</a></li>
+        <li><a href="#">Контакты</a></li>
+    </ul>
+    <script>
+        $(document).ready(function() {
+
+            var nuv = $('#nuv, #nuvv'),
+                offsetLine,
+                wLine;
+
+            $(nuv).css('position', 'relative').prepend('<li class="nuv-line"></li>');
+
+            function startPosLine(nuv) {
+                $(nuv).find('li').each(function() {
+                    var tkClass = $(this).attr('class');
+                    if (tkClass == 'active-line-nuv') {
+                        offsetLine = $(this).position().left;
+                        wLine = $(this).innerWidth();
+                        $(this).parent().find('.nuv-line').css({
+                            left: offsetLine,
+                            width: wLine
+                        });
+                    }
+                });
+            };
+            startPosLine(nuv);
+            //Если вы сделали навигацию по контенту в виде табов
+            $(nuv).find('li a').click(function() {
+                $(this).parents('ul').find('li').removeClass('active-line-nuv');
+                $(this).parent('li').addClass('active-line-nuv');
+                /*Здесь ваша функция при открытии нужного таба*/
+                startPosLine($(this).parents('ul'));
+            });
+
+            $(nuv).find('li').hover(function() {
+                startPosLine($(this).parent('ul'));
+                var tkPs = $(this).position().left,
+                    tkW = $(this).innerWidth();
+
+                $(this).parent().find('.nuv-line').css({
+                    left: tkPs,
+                    width: tkW
+                });
+            }, function() {
+                $(this).parent().find('.nuv-line').css({
+                    left: offsetLine,
+                    width: wLine
+                });
+            });
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: green;
+}
+h1 {
+    text-align: center;
+    font-size: 60px;
+}
+
+.searchForm {
+    margin: 30px 30px;
+}
+
+.searchForm input {
+}
+
+.searchForm .search {
+    width: 80vw;
+    height: 30px;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+
+.searchForm .btn{
+    width: 100px;
+    height: 30px;
+    margin: 20px;
+    cursor: pointer;
+    text-align: center;
+    background-color: #0eea0e
+}
+.btn:focus{
+    background-color: red;
+}

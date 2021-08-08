@@ -1,0 +1,48 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: indigo;
+}
+
+#main{
+    height: 80px;
+    width: 80px;
+    background-color: yellow;
+    box-shadow: 3px 3px 1px black;
+    border-radius: 50%;
+    position: absolute;
+    top:60%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+#main:hover{
+    cursor: pointer;
+}
+#c1,#c3,#c2{
+    height: 5px;
+    width: 5px;
+    background-color: wheat;
+    border-radius: 50%;
+    position: absolute;
+    top:60%;
+    left: 30%;
+    transform: translate(-50%,-50%);
+    z-index: 99;
+}
+#c2{
+    left: 50%;
+    
+}
+#c3{
+    left: 70%;
+}
+#c1 img,#c2 img,#c3 img{
+    height: 70px;
+    width: 50px;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+        
+}

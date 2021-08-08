@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Animated side menu</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <main>
+        <div class="logo">Brand Name</div>
+        <div class="nav-btn">
+            <span></span>
+        </div>
+        <nav>
+            <ul id="container">
+                <li>
+                    <a>Доска задач</a>
+                </li>
+                <li> <button class="accordion">Таблица пользователей</button>
+                    <div class="panel">
+                        <a href="">Список пользователей</a>
+                        <a href="">Редактировать пользователей</a>
+                    </div>
+                </li>
+                <li>
+                    <button class="accordion">Почта</button>
+                    <div class="panel">
+                        <a href="">Проверить почту</a>
+                        <a href="">Отправить письмо</a>
+                    </div>
+                </li>
+                <li>
+                    <a class="accordion">Карта</a>
+                </li>
+                <li>
+                    <a>Галерея</a>
+                </li>
+
+            </ul>
+        </nav>
+        <div class="container">
+            <section id="about">
+                <div class="content">
+                    <div class="title">About us</div>
+                    <div class="sub-title">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante. Mauris eleifend, quam a vulputate dictum, massa quam dapibus leo, eget vulputate orci purus ut lorem.
+                    </div>
+                </div>
+            </section>
+            <section id="portfolio">
+                <div class="content">
+                    <div class="title">Potfolio</div>
+                    <div class="sub-title">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante. Mauris eleifend, quam a vulputate dictum, massa quam dapibus leo, eget vulputate orci purus ut lorem.
+                    </div>
+                </div>
+            </section>
+            <section id="services">
+                <div class="content">
+                    <div class="title">Services</div>
+                    <div class="sub-title">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante. Mauris eleifend, quam a vulputate dictum, massa quam dapibus leo, eget vulputate orci purus ut lorem.
+                    </div>
+                </div>
+            </section>
+            <section id="contact">
+                <div class="content">
+                    <div class="title">Contact us</div>
+                    <div class="sub-title">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante. Mauris eleifend, quam a vulputate dictum, massa quam dapibus leo, eget vulputate orci purus ut lorem.
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- Accordion script-->
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        for (var i = 0; i < acc.length; i++) {
+            acc[i].onclick = function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="main.css">
+        <meta name="viewport" content="width=device-width, inintial-scale=1.0">
+        <script src="jquery-1.8.3.js"></script>
+        
+        <script>
+        $(document).ready(function(){
+           flag=0;
+            $("#main").click(function(){
+                if(flag==0)
+                {
+                  $("#main").animate({height:'120px',width:'120px'},300);
+                    $("#c1").animate({top:'-90%',left:'-70%'},200)
+                    $("#c1").animate({height:'100px',width:'100px'},200);
+                    $("#c1 img").delay(500).fadeIn(100);
+
+                    $("#c2").animate({top:'-110%',left:'--40%'},600)
+                    $("#c2").animate({height:'100px',width:'100px'},200);
+                    $("#c2 img").delay(500).fadeIn(100);
+
+                    $("#c3").animate({top:'-90%',left:'170%'},1000)
+                    $("#c3").animate({height:'100px',width:'100px'},200);
+                    $("#c3 img").delay(500).fadeIn(100);
+
+                    $("#main").css("background-image","url('cancel.jpg')");
+                    $("#main").css("backgrond-size","60% 60%");
+                    $("#main").css("backgrond-position","center");
+                    $("#main").css("background-repeat","no-repeat");
+                    flag=1;
+                }
+                else{
+                    $("main").animate({height:'80px',width:'80px'},100)
+                  
+                    $("#c1").animate({height:'5px',width:'5px'},100);
+                      $("#c1").animate({top:'60%',left:'30%'},200)
+                      $("#c1 img").css("display","none");
+                    
+                     $("#c2").animate({height:'5px',width:'5px'},100);
+                      $("#c2").animate({top:'60%',left:'50%'},200)
+                      $("#c2 img").css("display","none");
+                    
+                     $("#c3").animate({height:'5px',width:'5px'},100);
+                      $("#c3").animate({top:'60%',left:'70%'},200)
+                      $("#c3 img").css("display","none");
+                    $("#main").css("background-image","none");
+                     $("#main").animate({height:'55px',width:'55px'},100);
+                    flag=0;
+                }
+            })
+        });
+        </script>
+    </head>
+    <body>
+        <div id="main">
+            
+            <div id="c1">  <img src="1.JPG"/>       </div>
+            <div id="c2">     <img src="2.JPG"/>   </div>
+            <div id="c3">  <img src="3.JPG"/>       </div>
+        
+        </div>
+    </body>
+</html>

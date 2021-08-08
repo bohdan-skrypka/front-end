@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="main.css">
+               <meta name="viewport" content="width=device-width, inintial-scale=1.0">
+        <script src="jquery-1.8.3.js"></script>   
+    </head>
+    <body>
+       
+<div class="container">
+  
+  <div class="drag">
+    <div class="tooltip">
+     drag the button to the window edges to see how the tooltip changes its position
+    </div>
+   hover me
+  </div>
+  
+
+</div><!-- //.container -->
+
+        <script>
+        $(document).ready(function() {
+  
+ var $parent,
+     windowWidth,
+     windowHeight;
+  
+  //get actual window size
+  function winSize() {
+     windowWidth = $(window).width(),
+     windowHeight = $(window).height();
+  }
+  winSize();
+  $(window).resize(winSize);
+ //tooltip fadeIn and fadeOut on hover  
+ $('.tooltip').each(function() {
+   
+    $(this).parent().hover(function() {
+      $(this).find('.tooltip').fadeIn('fast');
+    }, function() {
+       $(this).find('.tooltip').fadeOut('fast');
+    });
+ 
+ });
+  
+  
+//tooltip position
+  $(document).mousemove(function(e) {
+    var mouseY = e.clientY,
+        mouseX = e.clientX,
+        tooltipHeight,
+        tooltipWidth;
+    
+    $('.tooltip').each(function() {
+      var $tooltip = $(this);
+      tooltipHeight = $tooltip.outerHeight();
+      tooltipWidth = $tooltip.width();
+      $parent = $tooltip.parent();
+     
+      $tooltip.css({
+        'left':mouseX,
+        'top':mouseY+20
+       });
+      
+      //reposition
+      if (tooltipWidth + mouseX+ 20> windowWidth) {
+       $tooltip.css({
+        'left':mouseX-tooltipWidth-20
+       });
+      }
+    
+      if (tooltipHeight + mouseY +20 > windowHeight) {
+        $tooltip.css({
+        'top':mouseY-20-tooltipHeight
+       }); 
+      }
+    });//end each
+ });//tooltip position
+
+$('.drag').draggable();
+
+});//end ready
+        </script>
+
+    </body>
+</html>

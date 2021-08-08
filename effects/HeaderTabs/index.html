@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" href="main.css">
+    <meta name="viewport" content="width=device-width, inintial-scale=1.0">
+    <script src="jquery-1.8.3.js"></script>
+</head>
+
+<body>
+     <h1>Tab Headers</h1>
+    <div id="firstTab" class="tabContent">
+        <h3>Tab1</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+    </div>
+    <div id="secondTab" class="tabContent">
+        <h3>Tab2</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+    </div>
+    <div id="thirdTab" class="tabContent">
+        <h3>Tab3</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+    </div>
+    <div id="fourthTab" class="tabContent">
+        <h3>Tab4</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+    </div>
+    <button class="tabLink" onclick="openTab('firstTab',this,'red')" id="defaultOpen">Tab1</button>
+    <button class="tabLink" onclick="openTab('secondTab',this,'green')">Tab2</button>
+    <button class="tabLink" onclick="openTab('thirdTab',this,'#80804d')">Tab3</button>
+    <button class="tabLink" onclick="openTab('fourthTab',this,'magenta')">Tab4</button>
+    <script>
+function openTab(tabName, element,color){
+    var i, tabContent,tabLinks;
+    tabContent=document.getElementsByClassName("tabContent");
+    for(i=0;i<tabContent.length;i++){
+        tabContent[i].style.display="none";
+    }
+    tabLinks=document.getElementsByClassName("tabLink");
+    for(i=0;i<tabLinks.length;i++)
+        {
+            tabLinks[i].style.backgroundColor="";
+        }
+    document.getElementById(tabName).style.display="block";
+    element.style.backgroundColor=color;
+}
+        document.getElementById("defaultOpen").onclick();
+    </script>
+
+</body>
+
+</html>

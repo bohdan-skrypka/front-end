@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" href="main.css">
+    <meta name="viewport" content="width=device-width, inintial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery-1.8.3.js"></script>
+</head>
+<input type="button" onclick="notifSet ()" value="Notification">
+<body>
+
+    <script>
+        function notifyMe() {
+            var notification = new Notification("Все еще работаешь, хочешь посетить мой сайт?", {
+                tag: "each-mail",
+                body: "Пора сделать перерыв)",
+                icon: "https://itproger.com/img/notify.png"
+            });
+        }
+
+        function notifSet() {
+            if (!("Notification" in window))
+                alert("Ваш браузер не поддерживает уведомления") ж
+            else if (Notification.permission === "granted")
+                setTimeout(notifyMe, 2000);
+            else if (Notification.permission !== "denaid") {
+                Notification.requestPermission(function(permission) {
+                    if (!('permission' in Notification))
+                        Notification.permission = permission;
+                    if (permission === "granted")
+                        setTimeout(notifyMe, 2000);
+                });
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

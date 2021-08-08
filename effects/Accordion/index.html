@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" href="main.css">
+    <meta name="viewport" content="width=device-width, inintial-scale=1.0">
+    <script src="jquery-1.8.3.js"></script>
+</head>
+
+<body>
+    <h1>Accordion</h1>
+
+    <div id="container">
+        <button class="accordion">Section1</button>
+        <div class="panel">
+            <p>Text1</p>
+        </div>
+
+        <button class="accordion">Section2</button>
+        <div class="panel">
+            <p>Text2</p>
+        </div>
+
+        <button class="accordion">Section3</button>
+        <div class="panel">
+            <p>Text3</p>
+        </div>
+    </div>
+
+
+    <!-- Accordion script-->
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        for (var i = 0; i < acc.length; i++) {
+            acc[i].onclick = function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>

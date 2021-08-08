@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: grey;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+ul {
+    display: flex;
+}
+
+ul li {
+    list-style: none;
+    color: wheat;
+    font-size: 5rem;
+    font-weight: bold;
+    letter-spacing: 10px;
+    filter: blur(1px);
+}
+
+ul:hover li {
+    animation: smoke 2s cubic-bezier(.64, .76, .74, .24) forwards;
+}
+
+@keyframes smoke {
+    0% {
+        transform: rotate(0deg) translateY(0px);
+        opacity: 1;
+        filter: blur(1px)
+    }
+    100% {
+        transform: rotate(45deg) translateY(-200px);
+        opacity: 0;
+        filter: blur(10px)
+    }
+}
+
+ul li:nth-child(4){
+    animation-delay: .6s;
+}

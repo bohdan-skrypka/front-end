@@ -1,0 +1,19 @@
+*{
+    box-sizing: border-box;
+    
+}
+body{
+    font-family: arial;
+    transition: background 1s ease;
+    background: #3498db;
+}
+p{
+    color: #ecf0f1;
+    font-size: 2em;
+    text-align: center;
+}
+.slide .inside{
+    height: 100%;
+    width: 100%;
+    padding: 0;
+}

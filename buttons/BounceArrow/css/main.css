@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: grey;
+}
+
+.arrow {
+    position: relative;
+    cursor: pointer;
+    font-size: 40px;
+    text-align: center;
+    transform: rotate(90deg);
+    color: black;
+    animation: bounceArrow 2s infinite;
+}
+
+@keyframes bounceArrow {
+    0% {
+        top: 0px;
+    }
+    50% {
+        top: 20px;
+    }
+    100% {
+        top:  0px;
+    }
+}

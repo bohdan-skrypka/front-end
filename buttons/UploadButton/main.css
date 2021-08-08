@@ -1,0 +1,67 @@
+#uploadbtn{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 200px;
+    height: 40px;
+    background: #4c4cdb;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    font-size: 18px;
+    font-family: arial;
+    border-radius: 40px;
+    cursor: pointer;
+}
+#uploadbtn.uploading{
+    width: 300px;
+    height: 10px;
+    background: #ccc;
+    transition: all 250ms ease-in-out;
+}
+#uploadbtn.uploading:before{
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 20px;
+    height: 10px;
+    background: blue;
+    text-align: center;
+    line-height: 40px;
+    color: #ccc;
+    font-size: 18px;
+    font-family: arial;
+    border-radius: 40px;
+}
+#uploadbtn.uploading{
+    width: 300px;
+    height: 10px;
+    background: #ccc;
+    transition: all 250ms ease-in-out;
+}
+#uploadbtn.uploading:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 10px;
+    background: #4c5542;
+    border-radius: 10px;
+    animation:  fill 1s linear forwards;
+    animation-delay: 250ms;
+}
+#uploadbtn.uploaded{
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    transition: all 200ms ease;
+}
+@keyframes fill{
+    to{
+        width: 100%;
+    }
+}

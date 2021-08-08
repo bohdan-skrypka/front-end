@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>title</title>
+    <link rel="stylesheet" href="css/main.css">
+    <meta name="viewport" content="width=device-width, inintial-scale=1.0">
+    <script src="js/jquery-1.8.3.js"></script>
+    <script type="text/x-javascript">
+        $(document).ready(function() {
+            flag = 0;
+            $("#icon").click(function() {
+                if (flag == 0) {
+                    $("#main").css('box-shadow', 'inset 0px 0px 0px 30px black, inset 0px -70px 0px 30px black');
+                    $("#main").css('background-color', 'rgba(0,0,0,0.2)');
+                    $('#m1').animate({
+                        top: '40%'
+                    }, 200);
+                    $('#m2').animate({
+                        top: '40%'
+                    }, 200);
+                    $('#m3').animate({
+                        top: '40%'
+                    }, 200);
+                    $('#m4').animate({
+                        top: '40%'
+                    }, 200);
+                    flag = 1;
+                } else {
+                    $("#main").css('box-shadow', 'inset 0px 0px 0px 0px black, inset 0px 0px 0px 0px black');
+                    $("#main").css('background-color', 'rgba(0,0,0,0)');
+                    $('#m1').animate({
+                        top: '100%'
+                    }, 200);
+                    $('#m2').animate({
+                        top: '100%'
+                    }, 200);
+                    $('#m3').animate({
+                        top: '100%'
+                    }, 200);
+                    $('#m4').animate({
+                        top: '100%'
+                    }, 200);
+                    flag = 0;
+                }
+            })
+        })
+
+    </script>
+</head>
+
+<body>
+    <div id="main">
+        <div id="icon">
+            <div id="line">
+            </div>
+        </div>
+        <div id="menu">
+            <div id="m1">Work</div>
+            <div id="m2">Services</div>
+            <div id="m3">Contact</div>
+            <div id="m4">About</div>
+        </div>
+    </div>
+</body>
+
+
+</html>

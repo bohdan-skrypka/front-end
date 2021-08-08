@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<script src="js/jquery-1.8.3.js"></script>
+    <script type="text/javascript" language="javascript">
+        nrow = 0; //количество строк по умолчанию
+        ncells = 0; //количество столбцов по умолчанию
+
+        //Проверяем: удалить или добавить строку?
+        function change_tr() {
+            rows = document.getElementById("rows");
+
+            if (rows.value - nrow > 0) {
+                addrow();
+            } else {
+                if (rows.value >= 0) {
+                    delrow();
+                }
+            }
+        }
+
+        //функция добавления строк
+        function addrow() {
+            rows = document.getElementById("rows");
+            ecells = document.getElementById("ecells");
+
+            for (i = 0; i < rows.value - nrow; i++) {
+                var newrow = mytable.insertRow(0);
+                for (k = 0; k < ecells.value; k++) {
+                    newrow.insertCell(0).innerHTML = "<input type='text' value=' 'size='4'>";
+                }
+            }
+            nrow = rows.value;
+        }
+
+        //функция удаления строк
+        function delrow() {
+            var rows = document.getElementById("rows");
+            var lastrowindex = mytable.rows.length - 1;
+
+            for (i = 0; i < Math.abs(nrow - rows.value); i++) {
+                mytable.deleteRow(lastrowindex);
+                lastrowindex = lastrowindex - 1;
+            }
+            nrow = rows.value;
+        }
+
+        //Проверяем:добавить или удалить столбцы?
+        function change_cells() {
+            var ecells = document.getElementById("ecells");
+
+            if (ecells.value - ncells > 0) {
+                addcells();
+            } else {
+                if (ecells.value >= 0) {
+                    delcells();
+                }
+            }
+        }
+
+        //добавление столбцов
+        function addcells() {
+            var ecells = document.getElementById("ecells");
+
+            for (i = 0; i < mytable.rows.length; i++) {
+                rowname = mytable.rows[i];
+                for (e = 0; e < Math.abs(ecells.value - ncells); e++) {
+                    rowname.insertCell(0).innerHTML = "<input type='text' value=' 'size='4'>";
+                }
+            }
+            ncells = ecells.value;
+        }
+
+        //удаление столбцов
+        function delcells() {
+            var ecells = document.getElementById("ecells");
+
+            for (i = 0; i < mytable.rows.length; i++) {
+                rowname = mytable.rows[i];
+                for (e = 0; e < Math.abs(ecells.value - ncells); e++) {
+                    rowname.deleteCell(0);
+                }
+            }
+            ncells = ecells.value;
+        }
+
+        //формирование итоговой таблицы и кода
+        function get_result() {
+            var inputnum = document.getElementsByTagName("input");
+            var inindex = 1;
+            rows = document.getElementById("rows");
+            ecells = document.getElementById("ecells");
+
+            //формирование тела таблицы
+            for (x = 0; x < rows.value - 1; x++) {
+                bodyt = bodyt + "<tr>";
+                for (n = 0; n < ecells.value; n++) {
+                    bodyt = bodyt + "<td>" + inputnum[inindex].value + "</td>";
+                    "</table>";
+                }
+            }
+
+            document.getElementById("result").innerHTML = bodyt;
+            document.getElementById("itog_code").innerHTML = "<textarea cols=100 rows=10 readonly>" + bodyt + "</textarea>";
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <div id="content">
+        <table>
+            <tr>
+                <td>Количество строк:</td>
+                <td>
+                    <input type="text" name="rows" id="rows" size="20" onchange="change_tr()" value="0"></td>
+            </tr>
+
+            <tr>
+                <td>Количество столбцов:</td>
+                <td>
+                    <input type="text" id="ecells" name="ecells" size="20" onchange="change_cells()" value="0"></td>
+            </tr>
+        </table>
+
+        <form> <input type="button" value="Нажмите здесь" name="buttonl" id="buttonl" onClick="mytable" />
+            <table id="my_table" name="my_table" cellpadding="2">
+                <thead>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <script>
+//установка значений по умолчанию в полях при перезагрузке страницы
+document.getElementById("rows").value=0;
+document.getElementById("ecells").value=0;
+ 
+//установка всех других значений переменных при загрузке страницы или ее перезагрузке
+mytable = document.getElementById("my_table");
+</script>
+</body>
+
+</html>

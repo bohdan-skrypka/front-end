@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="main.css">
+               <meta name="viewport" content="width=device-width, inintial-scale=1.0">
+        <script src="jquery-1.8.3.js"></script>   
+    </head>
+    <body>
+        <h1>LazyLoad</h1>
+        
+        <div>"content"</div>
+        <div>"content"</div>
+        <div>"content"</div>
+        <div>"content"</div>
+        <div>"content"</div>
+        <div>"content"</div>
+        <div>"content"</div>
+        <div>"content"</div>
+        <div>"content"</div>
+        <div>"content"</div>
+        <div>"content"</div>
+        <div>"content"</div>
+        <div>"content"</div>
+        <div>"content"</div>
+        <div>"content"</div>
+        <div>"content"</div>
+        <a id="loadMore" href="#">Load More</a>
+       
+        <script>
+        $(function(){
+          $('div').slice(0,4).show();
+            $("#loadMore").on('click',function(e){
+                e.preventDefault();
+                $("div:hidden").slice(0,4).slideDown();
+                
+            })
+            
+        })
+        </script>
+
+    </body>
+</html>

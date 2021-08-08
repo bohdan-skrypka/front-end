@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    padding: 0
+}
+
+#text {
+    font-family: arial black;
+    font-size: 65px;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    animation: colorAnimation 10s infinite;
+}
+
+#circle1 {
+    height: 30px;
+    width: 30px;
+    background-color: #000;
+    position: absolute;
+    top: 240px;
+    left: 700px;
+    border-radius: 50%;
+    animation: move 4s infinite;
+}
+
+#circle2 {
+    height: 30px;
+    width: 30px;
+    background-color: #000;
+    position: absolute;
+    top: 240px;
+    left: 750px;
+    border-radius: 50%;
+    animation: move 4.8s infinite;
+}
+
+#circle3 {
+    height: 30px;
+    width: 30px;
+    background-color: #000;
+    position: absolute;
+    top: 240px;
+    left: 800px;
+    border-radius: 50%;
+    animation: move 5s infinite;
+}
+
+@keyframes move {
+    0% {
+        background-color: #000;
+        top: 240px;
+    }
+    20% {
+        background-color: #eb1212;
+        top: 140px
+    }
+    40% {
+        background-color: #bf3d3d;
+        top: 240px
+    }
+    60% {
+        background-color: #481212;
+        top: 140px
+    }
+    80% {
+        background-color: #358b15;
+        top: 240px
+    }
+    90% {
+        background-color: #2a3660;
+        top: 140px
+    }
+    100% {
+        background-color: #6c3a91;
+        top: 240px
+    }
+}
+
+@keyframes colorAnimation{
+    0%{
+        color: #485353;
+    }
+    10%{
+        color: #52b25d;
+    }
+    30%{
+        color: #437e5e;
+    }
+    40%{
+        color: #55d873;
+    }
+    50%{
+        color: #1a8336;
+    }
+    60%{
+        color: #29a546;
+    }
+    70%{
+        color: #5c9831;
+    }
+    80%{
+        color: #000000;
+    }
+    90%{
+        color: #d3b052;
+    }
+    100%{
+        color: #30dd36;
+    }
+    
+}

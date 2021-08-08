@@ -1,0 +1,32 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: yellow
+}
+ul{
+    width: 600px;
+    list-style: none;
+    font-family:arial;
+    font-size: 15px;
+    position: absolute;
+    top:5%;
+    left: 50%;
+    transform: translate(-50%,-50%)
+}
+ul li{
+    width: 100px;
+    display: inline-block;
+    margin-left: 3px;
+    margin-right: 3px;
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+}
+ul li:hover{
+    cursor: pointer;
+}
+#line{
+    height: 2px;
+    width: 100px;
+    background-color: black;
+    transition: all .3s linear;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="main.css">
+               <meta name="viewport" content="width=device-width, inintial-scale=1.0">
+        <script src="jquery-1.8.3.js"></script>   
+        <script type="text/javascript" src="rotate.js"></script>
+    </head>
+    <body>
+          <h1>rotete image</h1>
+          <div class="border">
+             <script>
+              $(window).load(function(){
+                  $('#view360').rotate({imagegeDir:'',imageCount:8,imageExt:'jpg',canvasID:'mycar',canvasWidth:640,canvasHeight:400,autorotate:false});
+              })
+              </script>
+              <div id="view360"></div>
+              <a href="#" class="autorotate">Auto rotate</a>
+              <p>Click fot zoom</p>
+          </div>
+    </body>
+</html>

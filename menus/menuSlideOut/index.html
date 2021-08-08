@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="main.css">
+        <meta name="viewport" content="width=device-width, inintial-scale=1.0">
+        <script src="jquery-1.8.3.js"></script> 
+        <script>
+        $(document).ready(function(){
+            $(".fa-times").click(function(){
+               $(".sidebar_menu").addClass("hide_menu"); 
+               $(".toggle_menu").addClass("opacity_one"); 
+                
+            });
+             $(".toggle_menu").click(function(){
+               $(".sidebar_menu").removeClass("hide_menu"); 
+               $(".toggle_menu").removeClass("opacity_one"); 
+            });
+        });
+        </script>
+    </head>
+    <body>
+     <text class="toggle_menu">&#9776;</text>
+        <div class="sidebar_menu">
+        <i class="fa-times">Close</i>
+            <center>
+                <a href="index.html">
+                <h1 class="boxed_item">Bodya
+                    <span class="logo_bold">Skripka</span>
+                    </h1>
+                </a>
+                <h2 class="logo_title"> Professional Web Developer</h2>
+            </center>
+            <ul class="navigation_selection">
+                <li class="navigation_item">Profile</li>
+                <li class="navigation_item">Education</li>
+                <li class="navigation_item">Work</li>
+                <li class="navigation_item">Skills</li>
+                <li class="navigation_item">Interests</li>
+            </ul>
+            <center>
+            <a href="#"><h1 class="boxed_item boxed_item_smaller">
+                <i class="fa fa-user"></i>SIGN UP</h1></a>
+            </center>
+        </div>
+    </body>
+</html>

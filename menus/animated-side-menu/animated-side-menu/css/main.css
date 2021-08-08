@@ -1,0 +1,261 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+.logo {
+    top: 15px;
+    left: 20px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    position: fixed;
+    color: #fff;
+    z-index: 999999;
+}
+#container {
+    width: 85%;
+    margin: 0 auto;
+}
+.nav-btn {
+    width: 26px;
+    height: 30px;
+    position: fixed;
+    display: block;
+    cursor: pointer;
+    right: 20px;
+    z-index: 999999;
+    margin-top: 10px;
+}
+
+.nav-btn span,
+.nav-btn span:before,
+.nav-btn span:after {
+    position: absolute;
+    height: 2px;
+    width: 26px;
+    background-color: #fff;
+    transition: all 0.2s;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.8);
+}
+
+.nav-btn span {
+    top: 50%;
+}
+
+.nav-btn span:before {
+    content: '';
+    top: -6px;
+}
+
+.nav-btn span:after {
+    content: '';
+    top: 6px;
+}
+
+.nav-btn.open span,
+.nav-btn.open span:before,
+.nav-btn.open span:after {
+    background-color: #fff;
+}
+
+.nav-btn.open span {
+    transform: translateX(-5px);
+    background-color: #111;
+}
+
+.nav-btn.open span:before,
+.nav-btn.open span:after {
+    transform-origin: 0 50%;
+}
+
+.nav-btn.open span:before {
+    transform: translateX(4px) translateY(-3px) rotate(45deg);
+}
+
+.nav-btn.open span:after {
+    transform: translateX(4px) translateY(3px) rotate(-45deg);
+}
+
+main nav {
+    position: fixed;
+    top: 0;
+    right: -40%;
+    height: 100vh;
+    width: 40%;
+    background-color: #111;
+    transition: all 0.3s;
+    z-index: 99999;
+}
+
+main nav ul {
+    list-style: none;
+    position: absolute;
+    top: 50px;
+    left: 20px;
+}
+
+main nav ul li {
+    margin-top: 50px;
+    font-size: 3rem;
+    font-weight: 500;
+    margin-left: 300px;
+    transition: all 0.3s ease-in-out;
+}
+
+
+ #container li{
+    font-size: 3rem;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+}
+main nav ul li:first-child {
+    transition-delay: 0.1s;
+}
+
+main nav ul li:nth-child(2n) {
+    transition-delay:0.3s;
+}
+main nav ul li:nth-child(2n+1) {
+    transition-delay:0.1s;
+}
+
+
+main nav.open ul li {
+    margin-left: 0;
+    width: 300px;
+}
+
+main nav ul li a {
+    text-decoration: none;
+    color: #ddd;
+}
+
+main nav ul li :hover {
+    transition: 0.5s;
+    cursor: pointer;
+    color: aqua;
+}
+
+@media screen and (max-width: 768px) {
+    main nav {
+        width: 90%;
+        right: -90%;
+    }
+}
+
+main nav.open {
+    right: 0;
+}
+
+.container {
+    background-color: #ddd;
+    transition: transform 0.2s;
+}
+
+.container.open {
+    transform: translateX(-200px);
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: cover;
+}
+
+section .content {
+    color: #fff;
+    width: 50%;
+    position: absolute;
+    top: 40%;
+    left: 15%;
+    transform: translate(-10%, -95%);
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.6);
+}
+
+@media screen and (max-width: 768px) {
+    section .content {
+        width: 90%;
+    }
+}
+
+section .content .title {
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+section .content .sub-title {
+    background-color: #111;
+    padding: 10px;
+    margin-left: -10px;
+}
+
+#about {
+    background-image: url('../assets/images/drop.jpg');
+}
+
+#portfolio {
+    background-image: url('../assets/images/sunflower.jpg');
+}
+
+#services {
+    background-image: url('../assets/images/bridge.jpg');
+}
+
+#contact {
+    background-image: url('../assets/images/wolf.jpg');
+}
+
+section.open {
+    margin-left: -50px;
+}
+
+
+/* Стили аккордеона*/
+
+
+
+button.accordion {
+    background-color: #eee;
+    color: #fff;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    transition: 0.5s;
+    background: #111;
+}
+
+
+button.accordion:after {
+    color: #fff;
+    content: '\002b';
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion.active:after {
+    content: '\2212';
+}
+
+.panel {
+    padding: 0 18px;
+    background: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}

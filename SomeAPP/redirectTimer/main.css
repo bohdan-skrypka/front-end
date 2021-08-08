@@ -1,0 +1,21 @@
+.container{
+    width: 940px;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+}
+.btn{
+    background-color: blue;
+    border: none;
+    cursor: pointer;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.msgcount{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}

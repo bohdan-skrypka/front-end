@@ -1,0 +1,73 @@
+
+body{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+header{
+    margin: 20px;
+    font-family: arial;
+}
+
+.dws-menu {
+    margin: 0;
+    padding: 0;
+}
+
+.dws-menu ul,
+.dws-menu{
+    list-style: none;
+}
+.dws-menu >ul{
+    display: flex;
+    justify-content: center;
+}
+.dws-menu>ul li a
+{
+    display: block;
+    color: white;
+    background: grey;
+    padding: 15px 30px 15px 40px;
+    font-family: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+}
+.dws-menu >ul li {
+    position: relative;
+    border-right: 1px solid red;
+}
+
+.dws-menu> ul li:first-child{
+    border-left: 1px solid grey;
+
+}
+.dws-menu> ul li:last-child{
+    border-right: 1px solid grey;
+}
+.dws-menu li a:hover{
+    background: #454547;
+    font-weight: bold;
+}
+.dws-menu li ul{
+    display: none;
+    position: absolute;
+    min-width: 150px;
+}
+.dws-menu li >ul li{
+    border: 1px solid #c7c8ca;
+}
+.dws-menu li >ul li a{
+    padding: 15px;
+    text-transform: none;
+}
+
+.dws-menu li>ul li ul{
+    position: absolute;
+    right: -152px;
+    top: 0;
+    
+}
+.dws-menu li:hover>ul{
+    display: block;
+}

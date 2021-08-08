@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    height: 3000px;
+}
+.cont{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    height: 2px
+}
+.progress{
+    background: linear-gradient(#21f50f,#068e3f);
+    width: 0%;
+    height:4px;
+}

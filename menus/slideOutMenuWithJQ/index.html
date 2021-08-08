@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="main.css">
+               <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0">
+        <script src="jquery-1.8.3.js"></script>  
+        <script>
+        $(document).ready(function(){
+           $("#MenuIcon").click(function(){
+               $("#MainMenu").css("left","0px");
+               
+               function showMenu(){
+                   $("#MainMenu").css("-webkit-clip-path","polygon(0 0,100% 0, 100% 100%,0% 100%)");
+                   $("#MenuIcon").animate({right:'-100'},300);
+               }
+               setTimeout(showMenu,100);
+           });
+            
+            $("#close").click(function(){
+                $("#MainMenu").css("-webkit-clip-path","polygon( 0 0, 100% 0, 0% 100%, 0% 100%)");
+                function hideMenu(){
+                    $("#MainMenu").css("left","-300px");
+                    $("#MenuIcon").animate({right:'50'},300);
+                }
+                setTimeout(hideMenu,300);
+
+            });
+        });
+        </script>
+    </head>
+    <body>
+        <div id="MenuIcon">
+            <div id="MenuLine"></div>
+        </div>
+        
+        <div id="MainMenu">  
+            
+            <div id="logo">
+                <img src="RHCP-logo-spaces_ru.jpeg" height="120px" width="120px"/>
+            </div>
+                            <ul>
+                                <li class="line"> Home </li>
+                                <li class="line"> About</li>
+                                <li class="line"> Contact </li>
+                            </ul>
+            <div id="close">
+                <img src="Windows_Close_Program.png" height="30px" width="30px">
+            </div>
+        </div>
+    </body>
+</html>
